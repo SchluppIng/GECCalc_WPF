@@ -16,7 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using Microsoft.Win32;
 //Set Version of G.E.C. Calc
 [assembly: AssemblyVersion("1.0.0.0")]
 
@@ -87,5 +87,26 @@ namespace GECCalc_WPF
 
         //}
         #endregion
+
+        private void comboBoxColumnGrid_SelectedValueChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //BitmapImage image = new BitmapImage();
+            //image.BeginInit();
+            
+            if (comboBoxColumnGrid.SelectedIndex == 0)
+            {
+
+                //imageBox.Source = new BitmapImage(new Uri(@"pack://Pictures//Quadratic.PNG"));
+                //imageBox.Source = Image.FromFile("Pictures\\Quadratic.PNG");
+
+                //lblGridSelected.Text = "Quadratic grid selected";
+                MessageBox.Show("Rechtekisch");
+            }
+            else
+            {
+                 MessageBox.Show("Quadratisch");
+            }
+
+        }
     }
 }

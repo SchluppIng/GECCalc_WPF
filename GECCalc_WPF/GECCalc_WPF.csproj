@@ -37,6 +37,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -96,8 +97,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Pictures\Logo.ico" />
-    <Resource Include="Pictures\Quadratic.PNG" />
-    <Resource Include="Pictures\Rectangle.PNG" />
+    <Resource Include="Pictures\Quadratic.PNG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Pictures\Rectangle.PNG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Pictures\StartScreen.png" />
     <Resource Include="Pictures\System.PNG" />
   </ItemGroup>
@@ -106,6 +111,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

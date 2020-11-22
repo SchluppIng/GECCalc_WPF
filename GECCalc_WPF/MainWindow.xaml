@@ -8,10 +8,10 @@
         Title="GECCalc" Height="800" Width="1080" Background="LightGray" Icon="Logo.ico" Loaded="MainForm_Load">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="185*"/>
-            <ColumnDefinition Width="148*"/>
-            <ColumnDefinition Width="221*"/>
-            <ColumnDefinition Width="93*"/>
+            <ColumnDefinition Width="175*"/>
+            <ColumnDefinition Width="175*"/>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="95*"/>
             <ColumnDefinition Width="425*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -42,23 +42,31 @@
                 <Label Content="Column grid" HorizontalAlignment="Right"/>
                 <Label Content="Method" HorizontalAlignment="Right"/>
                 <Label Content="Area ratio [-]" HorizontalAlignment="Right"/>
-                <Label Content="Column radius rc [m]" HorizontalAlignment="Right"/>
-                <Label Content="Widening activation rgeo [m]" HorizontalAlignment="Right"/>
-                <Label Content="Elongation stiffness [kN/m]" HorizontalAlignment="Right"/>
-                <Label Content="Load (gd+qd) σ0 [kN/m²] " HorizontalAlignment="Right"/>
-                <Label Content="Atmospheric pressure [kN/m²]" HorizontalAlignment="Right"/>
+                <TextBlock Margin="0 5 0 0" HorizontalAlignment="Right"> 
+                    Column radius r<Run BaselineAlignment="Subscript">c</Run> [m]
+                </TextBlock>
+                <TextBlock Margin="0 8 0 0" HorizontalAlignment="Right"> 
+                    Widening activation r<Run BaselineAlignment="Subscript">geo</Run> [m]
+                </TextBlock>
+                <Label Margin="0 5 0 0" Content="Elongation stiffness [kN/m]" HorizontalAlignment="Right"/>
+                <TextBlock Margin="0 5 0 0" HorizontalAlignment="Right"><Run Text="Load (g"/><Run BaselineAlignment="Subscript" Text="d"/><Run Text="+q"/><Run BaselineAlignment="Subscript" Text="d"/><Run Text=") [kN/m²]"/></TextBlock>
+                <Label Margin="0 5 0 0" Content="Atmospheric pressure [kN/m²]" HorizontalAlignment="Right"/>
                 <Label Content="Power to Ohde m [-]" HorizontalAlignment="Right"/>
                 <Label Content="Poissoin ratio [-]" HorizontalAlignment="Right"/>
                 <Label Content="Column distance [m]" HorizontalAlignment="Right"/>
-                <Label Content="Column material" FontSize="14" FontWeight="Bold" HorizontalAlignment="Right" />
-                <Label Content="Effective shear strength Φ's [°]" HorizontalAlignment="Right"/>
-                <Label Content="Specific weight γs [kN/m³]" HorizontalAlignment="Right"/>
+                <Label Margin="0 5 0 0" Content="Column material" FontSize="14" FontWeight="Bold" HorizontalAlignment="Right" />
+                <TextBlock HorizontalAlignment="Right"> 
+                    Effective shear strength Φ'<Run BaselineAlignment="Subscript">s</Run> [°]
+                </TextBlock>
+                <TextBlock Margin="0 8 0 0" HorizontalAlignment="Right"> 
+                    Specific weight γ<Run BaselineAlignment="Subscript">s</Run> [kN/m³]
+                </TextBlock>
             </WrapPanel>
         </StackPanel>
 
         <StackPanel Grid.Row="2" Grid.Column="1">
             <TextBox  Margin="0,32,-180,0" x:Name="txtConfigurationName" TextAlignment="Left"/>
-            <ComboBox Margin="0 5 0 0" x:Name="comboBoxColumnGrid" IsReadOnly="True">
+            <ComboBox Margin="0 5 0 0" x:Name="comboBoxColumnGrid" IsReadOnly="True" SelectionChanged="comboBoxColumnGrid_SelectedValueChanged">
                 <ComboBoxItem IsSelected="True">Rectangle</ComboBoxItem>
                 <ComboBoxItem>Quadratic</ComboBoxItem>
             </ComboBox>
@@ -75,8 +83,9 @@
             <TextBox Margin="0 8 0 0" x:Name="txtPowerOhde" TextAlignment="Right" Text="1"/>
             <TextBox Margin="0 8 0 0" x:Name="txtPoissonRatio" TextAlignment="Right" Text="0,4"/>
             <TextBox Margin="0 8 0 0" x:Name="txtColumnDistance" TextAlignment="Right" Text="1,703"/>
-            <TextBox Margin="0 36 0 0" x:Name="txtEffectivShearStrength" TextAlignment="Right" Text="32"/>
+            <TextBox Margin="0 38 0 0" x:Name="txtEffectivShearStrength" TextAlignment="Right" Text="32"/>
             <TextBox Margin="0 8 0 0" x:Name="txtSpecificWeight" TextAlignment="Right" Text="18"/>
         </StackPanel>
+        <Image x:Name="imageBox" Grid.Column="2" HorizontalAlignment="Left" Height="255" Margin="10,56,0,0" Grid.Row="2" VerticalAlignment="Top" Width="351" Grid.ColumnSpan="3" Source="Pictures/Rectangle.PNG"/>
     </Grid>
 </Window>
