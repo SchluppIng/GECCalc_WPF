@@ -115,5 +115,11 @@
   <ItemGroup>
     <Folder Include="Resources\" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Quadratic.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="System.PNG" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
